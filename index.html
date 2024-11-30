@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="icon" href="./bookmark.ico">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Boomark</title>
+</head>
+
+<body>
+    <main class="py-5">
+        <div class="container">
+            <h1 class="text-center mb-5 position-relative">Boomarker</h1>
+            <div class="bookmarkContent p-3 py-4 d-flex align-items-center justify-content-center flex-column">
+                <h2 class="fs-4 mb-4">
+                    <i class="fa-solid fa-bookmark"></i>
+                    Bookmark your favorite sites
+                    <i class="fa-solid fa-bookmark"></i>
+                </h2>
+                <div class="siteName d-flex flex-column justify-content-center w-100">
+                    <label class="fw-bold mb-2" for="siteName">
+                        <i class="fa-solid fa-book-bookmark"></i> Site name
+                    </label>
+                    <input type="text" placeholder="Bookmark Name" id="siteName" class="form-control mb-1" oninput="validateName()" >
+                    <small class="text-danger d-none" id="nameError"> The website should at least have 3 charcaters</small>
+                </div>
+                <div class="siteURL d-flex flex-column justify-content-center w-100">
+                    <label class="fw-bold mb-2" for="siteURL">
+                        <i class="fa-solid fa-link"></i> Site URL
+                    </label>
+                    <input type="url" placeholder="Website URL" id="siteURL" class="form-control mb-4" oninput="validateURL()" >
+                    <small class="text-danger d-none" id="URLerror"> The website should at least have 3 charcaters</small>
+                </div>
+                <button type="button" class="btn btn-primary px-5" onclick="createWebsite()">Submit</button>
+            </div>
+            <table class="table text-center bg-light mt-4">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Website Name</th>
+                        <th>Visit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="siteInfo"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
